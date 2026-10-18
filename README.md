@@ -272,6 +272,18 @@ python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
 Do not run the seed script as part of normal startup. It is for initializing or intentionally refreshing the synthetic demo fixtures.
 
+## Vercel hackathon demo
+
+The React/Vite frontend is deployed at <https://ghost-iota-wheat.vercel.app>. Its API and FalkorDB remain in Docker on the demo computer. For a temporary live demo, install Cloudflare Tunnel and run this in a separate PowerShell window:
+
+```powershell
+cloudflared tunnel --url http://localhost:8000
+```
+
+Copy the generated `https://….trycloudflare.com` URL into the Vercel project's `VITE_API_BASE_URL` environment variable for Production, then redeploy. The backend's `API_CORS_ORIGINS` must include the Vercel site origin. Never expose FalkorDB ports `6379` or `3000` through the tunnel.
+
+This quick tunnel is temporary: the demo computer must remain powered on, awake, connected to the internet, and running Docker and `cloudflared`. Closing or sleeping the computer, stopping either service, or restarting the quick tunnel disconnects the online app; a new tunnel URL requires updating the Vercel variable and redeploying. The demo API has no authentication, so use only synthetic demo data, keep the tunnel active only for the presentation, and stop it afterward with Ctrl+C. This is not a production hosting setup.
+
 ## 2–3 minute demo recording script
 
 1. **0:00–0:20 — Start and connect.** Show Docker Compose with FalkorDB healthy and the UI's “Live graph connected” indicator. State that infrastructure entities are synthetic demo context.
