@@ -1,8 +1,8 @@
-# VulnGraph AI
+# GHOST
 
-VulnGraph AI keeps public vulnerability intelligence separate from environment data. NVD CVEs and OSV package evidence are imported into FalkorDB on demand. The included package, service, exposure, and asset graph remains a **simulated demo environment** unless you replace it with inventory from an authorized environment. A public CVE record does not show that a simulated service is affected.
+GHOST keeps public vulnerability intelligence separate from environment data. NVD CVEs and OSV package evidence are imported into FalkorDB on demand. The included package, service, exposure, and asset graph remains a **simulated demo environment** unless you replace it with inventory from an authorized environment. A public CVE record does not show that a simulated service is affected.
 
-VulnGraph AI is a graph-powered vulnerability intelligence platform for triaging connected security risk. It combines a FastAPI backend with FalkorDB to model vulnerabilities, packages, services, exposures, and data assets as connected graph entities. Instead of judging CVEs only by their public score, the system traverses the graph to calculate contextual risk based on actual service exposure, reachable assets, and attack paths.
+GHOST is a graph-powered vulnerability intelligence platform for triaging connected security risk. It combines a FastAPI backend with FalkorDB to model vulnerabilities, packages, services, exposures, and data assets as connected graph entities. Instead of judging CVEs only by their public score, the system traverses the graph to calculate contextual risk based on actual service exposure, reachable assets, and attack paths.
 
 ## Problem statement
 
