@@ -1,12 +1,12 @@
-# From CVE Lists to Attack Paths: Building VulnGraph AI with FalkorDB
+# From CVE Lists to Attack Paths: Building Ghost with FalkorDB
 
 Vulnerability dashboards are good at showing how many issues exist. They are less helpful when the urgent question is: **which issue can reach something important in this environment?**
 
-That question motivated VulnGraph AI, a graph-backed vulnerability triage demo built with FastAPI, React, and FalkorDB. Instead of treating each vulnerability as a disconnected row, the application follows relationships between vulnerabilities, packages, services, exposures, and data assets. It then presents the graph evidence behind its contextual prioritization.
+That question motivated Ghost, a graph-backed vulnerability triage demo built with FastAPI, React, and FalkorDB. Instead of treating each vulnerability as a disconnected row, the application follows relationships between vulnerabilities, packages, services, exposures, and data assets. It then presents the graph evidence behind its contextual prioritization.
 
 ## Why use a graph?
 
-A package's risk depends on where it is used and what those services can reach. In VulnGraph AI, the graph models:
+A package's risk depends on where it is used and what those services can reach. In Ghost, the graph models:
 
 - `Vulnerability` nodes and `AFFECTS_PACKAGE` relationships to `Package` nodes
 - `USED_BY` relationships from packages to `Service` nodes
@@ -36,4 +36,4 @@ The most useful graph work was not drawing nodes; it was validating what each ed
 
 FalkorDB gave us a natural way to express multi-hop relationships in Cypher and keep triage cases alongside the evidence they refer to. For a small team, that makes the path from an alert to an operationally relevant explanation easier to inspect and demo.
 
-VulnGraph AI is a prototype, not a replacement for verified asset inventory, vulnerability validation, or security review. Its goal is to demonstrate how graph relationships can make vulnerability prioritization more contextual, traceable, and explainable.
+Ghost is a prototype, not a replacement for verified asset inventory, vulnerability validation, or security review. Its goal is to demonstrate how graph relationships can make vulnerability prioritization more contextual, traceable, and explainable.
