@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: vulngraph-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    envVars:
+      - key: FALKORDB_HOST
+        sync: false          # you will paste this from FalkorDB Cloud
+      - key: FALKORDB_PORT
+        sync: false
+      - key: FALKORDB_USERNAME
+        sync: false
+      - key: FALKORDB_PASSWORD
+        sync: false
+      - key: FALKORDB_SSL
+        value: "true"
+      - key: FALKORDB_GRAPH_NAME
+        value: vulngraph
+      - key: APP_ENV
+        value: production
+      - key: DEBUG
+        value: "false"
+      - key: API_CORS_ORIGINS
+        sync: false          # paste your Vercel URL here, e.g. ["https://ghost-iota-wheat.vercel.app"]
+      - key: VULN_DATA_MODE
+        value: demo
+      - key: LLM_PROVIDER
+        value: none
+

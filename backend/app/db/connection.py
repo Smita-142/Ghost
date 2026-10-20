@@ -23,6 +23,8 @@ def get_client() -> falkordb.FalkorDB:
                 kwargs["username"] = settings.falkordb_username
             if settings.falkordb_password:
                 kwargs["password"] = settings.falkordb_password
+            if settings.falkordb_ssl:
+                kwargs["ssl"] = True
             _client = falkordb.FalkorDB(**kwargs)
             logger.info(
                 "Connected to FalkorDB at %s:%s",

@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     falkordb_username: str = ""
     falkordb_password: str = ""
     falkordb_graph_name: str = "vulngraph"
+    falkordb_ssl: bool = False
 
     # Public vulnerability intelligence. Demo remains the explicit offline default.
     vuln_data_mode: str = "demo"
