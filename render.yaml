@@ -3,7 +3,7 @@ services:
     name: vulngraph-backend
     runtime: docker
     dockerfilePath: ./backend/Dockerfile
-    dockerContext: ./backend
+    dockerContext: .
     plan: free
     envVars:
       - key: FALKORDB_HOST
@@ -28,4 +28,3 @@ services:
         value: demo
       - key: LLM_PROVIDER
         value: none
-
